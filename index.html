@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de monedas</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <!--  contenedor principal -->
+    <div class="container">
+        <div class="conversor__container">
+            <h1 class="conversor__title">Conversor de monedas Nacional</h1>
+
+            <div class="conversor__body">
+
+                <!--   titulo del conversor -->
+                <label class="conversor__body__title" for="input-1">Pesos CLP</label>
+                <input id="input-1" type="number" name="input-1" placeholder="Ingrese un monto en CLP">
+
+                <!--    alerta que aparece si no has ingresado un monto -->
+                <p class="alert" id="alert-1" style="color: red; font-weight: bold;"></p>
+                <label class="conversor__label__title" for="select-1">Moneda a convertir:</label>
+
+                <!--   select con distintas opciones -->
+                <select class="conversor__select-1" name="select-1" id="select-1">
+
+                    <!--   opciones para convertir divisas -->
+                    <option class="option" value="coin">Seleccione moneda</option>
+                    <option class="option" value="dolar">Dolar</option>
+                    <option class="option" value="euro">Euro</option>
+                    <option class="option" value="uf">UF</option>
+                    <option class="option" value="bitcoin">BitCoin</option>
+                    <option class="option" value="utm">UTM</option>
+                </select>
+
+                <!--    alerta que aparece si no has seleccionado una moneda -->
+                <p class="alert" id="alert-2" style="color: red; font-weight: bold;"></p>
+
+                <!--   boton que captura los valores del input -->
+                <button id="btn-1" class="conversor__btn-1">Convertir</button>
+
+                <!--   resultado de la conversión  -->
+                <span style="font-size: 1.5rem; font-weight: bold;" id="resultado"
+                    class="conversor__resultado">...</span>
+                <div class="container__grafico">
+                    <canvas class="grafico" id="myChart">
+
+                    </canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
